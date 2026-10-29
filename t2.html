@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neha & Mehedi · Wedding Invitation</title>
+<meta name="description" content="Case No. 04-12-2026: The Union of Neha & Mehedi. You are invited. Two hearts. One verdict. Zero vulnerabilities.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Neha & Mehedi · Wedding Invitation">
+<meta property="og:description" content="Wedding 04 Dec 2026, Dhaka · Reception 05 Dec 2026, Pabna. Break the seal to open.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Neha & Mehedi · Wedding Invitation">
+<meta name="twitter:description" content="Two hearts. One verdict. Zero vulnerabilities.">
+<meta name="theme-color" content="#F6EEDC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Great+Vibes&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- =====================================================================
+  PLACEHOLDERS: edit the values in the CONFIG script just below.
+  PHONE_NUMBER      e.g. "+8801XXXXXXXXX"  (digits with country code)
+  WHATSAPP_NUMBER   e.g. "8801XXXXXXXXX"   (digits only, no + or spaces)
+  FORM_ENDPOINT     Formspree:  https://formspree.io/f/xxxxxxx
+                    (create a form at formspree.io, paste its endpoint)
+                    Google Sheets: deploy an Apps Script web app
+                    (Execute as: Me, Access: Anyone), paste the /exec URL.
+                    Script sketch:
+                      function doPost(e){var s=SpreadsheetApp.getActiveSheet();
+                      var p=e.parameter;s.appendRow([new Date(),p.name,p.attending,
+                      p.events,p.guests,p.message]);
+                      return ContentService.createTextOutput('ok');}
+  MAP_LINK_*        swap in the exact "Share > Copy link" URL from Google Maps
+  COUPLE_PHOTO_URL  optional; leave "" and the design stays complete
+====================================================================== -->
+<script>
+const PHONE_NUMBER = "";
+const WHATSAPP_NUMBER = "";
+const FORM_ENDPOINT = "";
+// SWAP IN EXACT GOOGLE MAPS LINKS HERE:
+const MAP_LINK_WEDDING = "https://www.google.com/maps/search/?api=1&query=PSC+Convention+Center+Dhaka";
+const MAP_LINK_RECEPTION = "https://www.google.com/maps/search/?api=1&query=Banolota+Party+Center+Pabna";
+const COUPLE_PHOTO_URL = "";
+</script>
+
+<script>
+/* Theme set before first paint (no flash). pref: auto | light | dark */
+var mq = matchMedia('(prefers-color-scheme: dark)');
+function applyTheme(p){
+  var t = p === 'auto' ? (mq.matches ? 'dark' : 'light') : p, d = document.documentElement;
+  d.dataset.pref = p; d.dataset.theme = t;
+  document.querySelector('meta[name=theme-color]').content = t === 'dark' ? '#0B1530' : '#F6EEDC';
+}
+var p0 = 'auto'; try { p0 = localStorage.getItem('inv-theme') || 'auto'; } catch (e) {}
+applyTheme(p0);
+mq.addEventListener('change', function(){ if (document.documentElement.dataset.pref === 'auto') applyTheme('auto'); });
+</script>
+
+<style>
+:root{
+  --bg:#E4D6B8; --paper:#FBF6E9; --paper2:#F4EBD5; --ink:#16224A; --mute:#4A5273;
+  --gold:#C9A24B; --gold2:#EFD58A; --gold-d:#8E6D22; --on-gold:#2A1D05;
+  --acc:#7A1F32; --line:rgba(22,34,74,.22); --shadow:rgba(70,45,10,.35); --grain:.08; --fx:50;
+  --serif:'Cormorant Garamond','Noto Serif Bengali',Georgia,serif;
+  --script:'Great Vibes','Noto Serif Bengali',cursive;
+  --sans:Inter,'Noto Serif Bengali',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+}
+[data-theme=dark]{
+  --bg:#050A1A; --paper:#0B1530; --paper2:#0F1C3E; --ink:#F3ECD9; --mute:#B9BFD6;
+  --gold:#D9B25A; --gold2:#F8E19B; --gold-d:#E7C873; --on-gold:#0B1530;
+  --acc:#5FD3C8; --line:rgba(243,236,217,.24); --shadow:rgba(0,0,0,.7); --grain:.05;
+}
+*{box-sizing:border-box;margin:0}
+.tx *{transition:background-color .5s,color .5s,border-color .5s,box-shadow .5s!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font:400 1rem/1.65 var(--sans);color:var(--ink);background:var(--bg);overflow-x:hidden;min-height:100dvh;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+body{background-image:radial-gradient(circle at 20% 10%,rgba(201,162,75,.18),transparent 40%),radial-gradient(circle at 80% 90%,rgba(122,31,50,.10),transparent 45%)}
+[data-theme=dark] body{background-image:radial-gradient(circle at 20% 10%,rgba(201,162,75,.12),transparent 40%),radial-gradient(circle at 80% 90%,rgba(95,211,200,.07),transparent 45%)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:var(--grain);mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+[data-theme=dark] body::after{mix-blend-mode:screen}
+body.lock{overflow:hidden}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.15;overflow-wrap:anywhere}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em}
+.foil{background:linear-gradient(115deg,var(--gold-d),var(--gold) 25%,var(--gold2) calc(var(--fx)*1%),var(--gold) 75%,var(--gold-d));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;min-width:48px;padding:.6rem 1.4rem;border:0;border-radius:3px;
+  font:600 1rem var(--sans);color:var(--on-gold);text-decoration:none;cursor:pointer;
+  background:linear-gradient(115deg,var(--gold-d),var(--gold) 25%,var(--gold2) calc(var(--fx)*1%),var(--gold) 75%,var(--gold-d));
+  box-shadow:0 2px 0 var(--gold-d),0 8px 18px -8px var(--shadow)}
+.btn:disabled{opacity:.6;cursor:wait}
+.link{display:inline-flex;align-items:center;min-height:44px;color:var(--acc);font-size:.9rem;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- Envelope ---------- */
+#env{position:fixed;inset:0;height:100dvh;z-index:100;display:grid;place-items:center;perspective:1200px;
+  background:radial-gradient(circle,var(--paper2),var(--bg));transition:opacity .5s,transform .5s}
+#env.leave{opacity:0;transform:translateY(-6%)}
+.eb{position:relative;width:min(92vw,620px);height:min(72dvh,125vw);background:linear-gradient(160deg,var(--paper),var(--paper2));
+  border:1px solid var(--gold);box-shadow:0 30px 60px -20px var(--shadow);transform-style:preserve-3d}
+.eb::before{content:"";position:absolute;inset:8px;border:1px solid var(--line);pointer-events:none}
+.flap{position:absolute;left:0;top:0;width:100%;height:56%;z-index:4;transform-origin:top;
+  background:linear-gradient(180deg,var(--paper2),var(--paper));clip-path:polygon(0 0,100% 0,50% 100%);
+  filter:drop-shadow(0 4px 4px var(--shadow));transition:transform .7s ease-in-out,z-index 0s .35s;backface-visibility:visible}
+.open .flap{transform:rotateX(180deg);z-index:0}
+.pocket{position:absolute;inset:0;z-index:3;background:linear-gradient(200deg,var(--paper),var(--paper2));
+  clip-path:polygon(0 38%,50% 64%,100% 38%,100% 100%,0 100%)}
+.slip{position:absolute;left:9%;right:9%;top:34%;height:56%;z-index:2;display:grid;place-content:center;text-align:center;
+  background:var(--paper);border:1px solid var(--gold);transition:transform .65s ease-out .45s}
+.open .slip{transform:translateY(-62%)}
+.slip span{font:2.4rem/1.1 var(--script)}
+.to{position:absolute;bottom:7%;width:100%;text-align:center;z-index:5;font:italic 500 clamp(1.1rem,4.5vw,1.5rem) var(--serif);color:var(--mute)}
+#seal{position:absolute;left:50%;top:50%;z-index:6;width:clamp(84px,24vw,110px);aspect-ratio:1;margin:-12% 0 0 calc(clamp(84px,24vw,110px)/-2);
+  border:0;background:none;padding:0;cursor:pointer;animation:pulse 2.2s ease-in-out infinite;transition:opacity .4s .5s}
+#seal svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .5s ease-out,opacity .4s .3s;filter:drop-shadow(0 4px 5px rgba(0,0,0,.4))}
+.sl{clip-path:inset(0 50% 0 0)}.sr{clip-path:inset(0 0 0 50%)}
+.open #seal{animation:none;opacity:0}
+.open .sl{transform:translate(-18px,10px) rotate(-14deg);opacity:0}
+.open .sr{transform:translate(18px,10px) rotate(14deg);opacity:0}
+.tap{position:absolute;left:0;right:0;top:calc(50% + clamp(26px,9vw,44px));z-index:5;text-align:center;font:600 .85rem var(--mono);color:var(--acc);padding:0 1rem;transition:opacity .3s}
+.open .tap{opacity:0}
+#skip{position:absolute;right:max(1rem,env(safe-area-inset-right));top:max(1rem,env(safe-area-inset-top));z-index:7;min-height:44px;padding:0 1rem;background:none;border:0;
+  color:var(--ink);font:600 .9rem var(--sans);text-decoration:underline;cursor:pointer}
+@keyframes pulse{50%{transform:scale(1.06)}}
+
+/* ---------- Card ---------- */
+main{width:min(100%,600px);margin:0 auto;padding:clamp(0rem,3vw,2.5rem) 0 6rem}
+.panel{position:relative;padding:clamp(3rem,10vw,4.5rem) clamp(1.5rem,7vw,3rem);text-align:center;background-color:var(--paper);
+  box-shadow:0 14px 30px -14px var(--shadow),inset 0 0 0 1px var(--line),inset 0 0 0 7px var(--paper),inset 0 0 0 8px rgba(201,162,75,.55);
+  opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.panel.in{opacity:1;transform:none}
+.panel:nth-child(even){background-color:var(--paper2)}
+.panel+.panel{margin-top:-4px}
+[data-theme=dark] .panel{background-image:linear-gradient(rgba(95,211,200,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(95,211,200,.04) 1px,transparent 1px);background-size:26px 26px}
+.cn{position:absolute;width:clamp(46px,13vw,76px);aspect-ratio:1;color:var(--gold);pointer-events:none}
+.tl{top:12px;left:12px}.tr{top:12px;right:12px;transform:scaleX(-1)}.bl{bottom:12px;left:12px;transform:scaleY(-1)}.br{bottom:12px;right:12px;transform:scale(-1)}
+.panel>:not(.cn):not(canvas){position:relative}
+.panel p+p,.panel p+h2,.panel h2+p{margin-top:1rem}
+.lead{font:italic 500 clamp(1.2rem,4.6vw,1.5rem)/1.4 var(--serif);color:var(--mute)}
+.names{font:400 clamp(2.6rem,13vw,4.6rem)/1.05 var(--script);margin:1rem 0}
+.names small{display:block;font-size:.5em;color:var(--acc)}
+.full{font:700 clamp(1.15rem,5vw,1.6rem)/1.3 var(--serif);letter-spacing:.04em}
+.tag{min-height:3.4em;font:italic 500 clamp(1.1rem,4.4vw,1.4rem) var(--serif);color:var(--acc);margin-top:1.5rem}
+.lock{width:44px;height:44px;border:0;background:none;color:var(--gold);cursor:pointer;margin-top:1rem}
+#cover{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+#cover canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.photo{width:clamp(130px,40vw,190px);aspect-ratio:3/4;object-fit:cover;border-radius:999px 999px 6px 6px;border:2px solid var(--gold);margin:1rem auto}
+.case{display:inline-block;border:1px dashed var(--acc);color:var(--acc);padding:.7rem 1rem;overflow-wrap:anywhere;line-height:1.5}
+.stamps{display:grid;gap:1rem;margin-top:1.8rem}
+.stamp-p{border:2px solid var(--acc);padding:.9rem 1rem;border-radius:4px;transform:rotate(-1.2deg);font:600 .95rem var(--sans)}
+.stamp-p:nth-child(2){transform:rotate(1.2deg);border-color:var(--gold-d)}
+.stamp-p b{display:block;font:700 1.4rem var(--serif)}
+[data-theme=dark] .stamp-p:nth-child(2){border-color:var(--gold)}
+.court{border:2px double var(--ink);padding:1.2rem .8rem;margin-top:1rem}
+.cd{display:flex;justify-content:center;flex-wrap:wrap;gap:.4rem;margin-top:.6rem;font:500 clamp(1.5rem,8vw,2.4rem) var(--mono)}
+.cd span span{font-size:.45em;margin:0 .35em 0 .1em;color:var(--mute)}
+.pass{position:relative;margin-top:2rem;padding:2rem 1.2rem 2.4rem;border:1px solid var(--gold);background:var(--paper)}
+.panel:nth-child(even) .pass{background:var(--paper)}
+.pass h3{font-size:clamp(1.6rem,7vw,2.2rem)}
+.pass .date{font:700 1.5rem var(--serif);margin:.8rem 0 .2rem}
+.pass .btn{margin:1.2rem .3rem .2rem}
+.decree{border:3px double var(--gold)}
+.sealmini{width:64px;height:64px;position:absolute;left:50%;bottom:-32px;margin-left:-32px}
+.rib{position:absolute;left:50%;bottom:-62px;width:30px;height:34px;margin-left:-15px;z-index:-1;background:var(--acc);clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%)}
+.ticket{border-radius:10px;margin-top:3.6rem;border-style:solid;overflow:visible}
+.ticket::before,.ticket::after{content:"";position:absolute;top:58%;width:22px;height:22px;border-radius:50%;background:var(--paper2);border:1px solid var(--gold)}
+.ticket::before{left:-12px;clip-path:inset(0 0 0 50%)}.ticket::after{right:-12px;clip-path:inset(0 50% 0 0)}
+.perf{border-top:2px dashed var(--line);margin:1.4rem -1.2rem 1rem}
+.bar{height:36px;margin:1rem auto 0;max-width:240px;opacity:.85;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 9px,var(--ink) 9px 12px,transparent 12px 14px)}
+.acc-t{color:var(--acc);font-weight:700}
+.slipform{text-align:left;margin-top:1.5rem;border:1px solid var(--line);padding:1.4rem 1.1rem;background:var(--paper);position:relative}
+.cut{display:flex;align-items:center;gap:.5rem;color:var(--mute);margin:2rem 0 0}
+.cut::after{content:"";flex:1;border-top:2px dashed var(--ink);opacity:.5}
+.cut svg{width:26px;height:26px;transform:rotate(-90deg)}
+label,legend{display:block;font:600 .95rem var(--sans);margin:1.1rem 0 .35rem}
+input[type=text],select,textarea,input[type=number]{width:100%;min-height:48px;font:400 1rem var(--sans);padding:.65rem .8rem;color:var(--ink);background:transparent;border:1px solid var(--line);border-bottom:2px solid var(--gold);border-radius:3px}
+select option{color:#111}
+textarea{min-height:110px;resize:vertical}
+fieldset{border:0;padding:0;min-width:0}
+.radio{display:flex;align-items:center;gap:.7rem;min-height:48px;font-weight:400;margin:0}
+.radio input{width:22px;height:22px;accent-color:var(--gold-d)}
+.err{color:var(--acc);font-size:.85rem;min-height:1.1em;margin-top:.25rem;font-weight:600}
+[data-theme=light] .err{color:#9a1b30}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+#fmsg{margin-top:1rem;text-align:center}
+.thanks{display:none;padding:2rem 0}.thanks.show{display:block}.thanks h3{font-size:1.9rem}
+.stampbig{position:absolute;inset:0;display:none;place-items:center;z-index:5;pointer-events:none}
+.stampbig.show{display:grid}
+.stampbig div{border:6px double var(--acc);color:var(--acc);padding:.5rem 1.2rem;font:700 clamp(2rem,10vw,3rem) var(--serif);letter-spacing:.1em;text-align:center;background:color-mix(in srgb,var(--paper) 85%,transparent);transform:rotate(-12deg);animation:slam .5s cubic-bezier(.2,1.6,.4,1) both}
+.stampbig small{display:block;font-size:.55em;letter-spacing:.05em}
+@keyframes slam{from{transform:rotate(-12deg) scale(3.4);opacity:0}to{transform:rotate(-12deg) scale(1);opacity:1}}
+.callcard{display:inline-block;margin-top:1.4rem;padding:1.4rem 1.2rem;border:1px solid var(--gold);background:var(--paper);box-shadow:6px 6px 0 var(--gold)}
+.callcard .btn{margin:.3rem}
+.fin{font:italic 500 clamp(1.4rem,6vw,1.9rem) var(--serif)}
+#toast{position:fixed;left:50%;bottom:calc(5.5rem + env(safe-area-inset-bottom));transform:translate(-50%,20px);z-index:300;max-width:90vw;
+  background:var(--ink);color:var(--paper);padding:.7rem 1.2rem;border-radius:3px;font:500 .85rem var(--mono);opacity:0;pointer-events:none;transition:.3s}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.fab{position:fixed;bottom:max(1rem,env(safe-area-inset-bottom));z-index:150;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);cursor:pointer;
+  background:var(--paper);color:var(--ink);display:grid;place-items:center;box-shadow:0 6px 16px -6px var(--shadow);font:700 .85rem var(--sans)}
+#themeBtn{right:max(1rem,env(safe-area-inset-right))}#langBtn{left:max(1rem,env(safe-area-inset-left))}
+.fab svg{width:24px;height:24px}
+@media (min-width:700px){.stamps{grid-template-columns:1fr 1fr}.bar{max-width:300px}}
+@media (max-height:480px) and (orientation:landscape){#cover{min-height:auto}.eb{height:84dvh}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.panel{opacity:1;transform:none}}
+</style>
+</head>
+<body class="lock">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3DC93"/><stop offset=".5" stop-color="#C9A24B"/><stop offset="1" stop-color="#8E6D22"/></linearGradient>
+    <!-- Corner flourish: alpona petals + circuit traces -->
+    <symbol id="c" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+      <path d="M3 57V20C3 10 10 3 20 3h37"/><path d="M8 57V24C8 14 14 8 24 8h33" opacity=".5"/>
+      <path d="M14 14c6-1 10 3 9 9-6 1-10-3-9-9zM14 14c-1 6 3 10 9 9" /><circle cx="14" cy="14" r="2.2" fill="currentColor"/>
+      <path d="M30 14h10l4 4h12M14 32v10l4 4v8" opacity=".6"/><circle cx="57" cy="18" r="1.6" fill="currentColor"/><circle cx="18" cy="57" r="1.6" fill="currentColor"/>
+      <path d="M32 8c3 4 3 8 0 12M44 8c3 4 3 8 0 12" opacity=".5"/>
+    </symbol>
+    <!-- Wax seal: N & M with scales (top) and padlock (bottom) -->
+    <symbol id="seal" viewBox="0 0 100 100">
+      <path d="M50 3c10 0 14 6 24 8s14 12 15 22 8 16 6 26-12 14-18 22-14 16-27 15-18-8-26-15S6 69 6 57 1 36 8 27s10-14 20-18S40 3 50 3z" fill="url(#gg)" stroke="#6b4f14" stroke-width="1.5"/>
+      <circle cx="50" cy="50" r="35" fill="none" stroke="#6b4f14" stroke-width="1.5" opacity=".7"/>
+      <g stroke="#4a3508" stroke-width="1.4" fill="none" stroke-linecap="round"><path d="M50 17v10M40 20h20M40 20l-4 8h8zM60 20l-4 8h8z" transform="translate(0 -1)"/></g>
+      <text x="50" y="58" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-weight="700" font-size="25" fill="#4a3508">N&amp;M</text>
+      <g fill="#4a3508"><rect x="44" y="72" width="12" height="9" rx="1.5"/><path d="M46 72v-3a4 4 0 018 0v3" fill="none" stroke="#4a3508" stroke-width="1.6"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ 1. ENVELOPE ============ -->
+<div id="env" role="dialog" aria-label="Wedding invitation envelope">
+  <button id="skip" type="button">Skip</button>
+  <div class="eb">
+    <div class="flap"></div>
+    <div class="slip" aria-hidden="true"><span class="foil">Neha &amp; Mehedi</span></div>
+    <div class="pocket"></div>
+    <p class="to">To our dear guest</p>
+    <button id="seal" type="button" aria-label="Tap to break the seal and open the invitation">
+      <svg class="sl" role="img" aria-label="Gold wax seal with N and M monogram"><use href="#seal"/></svg>
+      <svg class="sr" aria-hidden="true"><use href="#seal"/></svg>
+    </button>
+    <p class="tap">Tap to break the seal</p>
+  </div>
+</div>
+
+<main id="card">
+
+<!-- ============ 2. COVER ============ -->
+<section class="panel" id="cover" aria-labelledby="h-cover">
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <p class="lead" data-bn="উভয় পরিবারের সাথে একত্রে">Together with their families</p>
+  <h1 id="h-cover" class="names foil" aria-label="Neha and Mehedi">
+    <span data-bn="নেহা &amp; মেহেদী">Neha &amp; Mehedi</span>
+  </h1>
+  <p class="full"><span data-bn="শিরিন তাজরিন নেহা">Showrin Tajrin Neha</span><br><span class="mono" data-bn="&amp;">&amp;</span><br><span data-bn="মাহমুদ হাসান মেহেদী">Mahmud Hasan Mehedi</span></p>
+  <p class="tag" id="tag" data-en="Two hearts. One verdict. Zero vulnerabilities." data-bn="দুটি হৃদয়। একটি রায়। শূন্য দুর্বলতা।" aria-label="Two hearts. One verdict. Zero vulnerabilities."></p>
+  <button class="lock" id="padlock" type="button" aria-label="Padlock: check encryption status">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" role="img" aria-label="Padlock"><rect x="5" y="11" width="14" height="10" rx="2" fill="currentColor" fill-opacity=".2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>
+  </button>
+</section>
+
+<!-- ============ 3. CASE FILE + INVITATION ============ -->
+<section class="panel" aria-labelledby="h-inv">
+  <p class="case mono" data-bn="মামলা নং ০৪-১২-২০২৬: নেহা ও মেহেদীর মিলন">CASE NO. 04-12-2026: The Union of Neha &amp; Mehedi</p>
+  <h2 id="h-inv" class="foil" style="font-size:clamp(2rem,9vw,2.8rem);margin-top:1.6rem" data-bn="আপনি আমন্ত্রিত">You are invited</h2>
+  <p class="lead" data-bn="পরিবারের আশীর্বাদ ও আনন্দিত হৃদয়ে আমরা আপনাকে আমাদের নতুন জীবনের সূচনার সাক্ষী হতে আমন্ত্রণ জানাচ্ছি। আপনার উপস্থিতিই আমাদের সবচেয়ে বড় উপহার।">With joyful hearts and our families' blessings, we invite you to witness the beginning of our forever. Your presence is the finest gift we could ask for.</p>
+  <div class="stamps">
+    <div class="stamp-p"><b data-bn="নেহা">Neha</b><span data-bn="অ্যাডভোকেট · ন্যায়ের রক্ষক">Advocate · defender of justice</span></div>
+    <div class="stamp-p"><b data-bn="মেহেদী">Mehedi</b><span data-bn="সাইবার সিকিউরিটি ইঞ্জিনিয়ার · নেটওয়ার্কের প্রহরী">Cyber Security Engineer · defender of the network</span></div>
+  </div>
+</section>
+
+<!-- ============ 4. COUNTDOWN ============ -->
+<section class="panel" aria-labelledby="h-cd">
+  <div class="court" role="timer" aria-live="off">
+    <h2 id="h-cd" class="mono" style="font-family:var(--mono);font-size:.9rem;font-weight:500" data-bn="আদালতের নোটিশ · শুনানি শুরু হতে বাকি:">COURT NOTICE · Hearing begins in:</h2>
+    <div class="cd" id="cd"><span><b id="d">00</b><span data-bn="দিন">d</span></span><span><b id="h">00</b><span data-bn="ঘ.">h</span></span><span><b id="m">00</b><span data-bn="মি.">m</span></span><span><b id="s">00</b><span data-bn="সে.">s</span></span></div>
+  </div>
+</section>
+
+<!-- ============ 5. EVENTS ============ -->
+<section class="panel" aria-labelledby="h-ev">
+  <h2 id="h-ev" class="foil" style="font-size:clamp(2rem,9vw,2.8rem)" data-bn="অনুষ্ঠানসূচি">Order of Events</h2>
+
+  <article class="pass decree">
+    <p class="mono acc-t" data-bn="বিবাহ অনুষ্ঠান">Wedding Ceremony</p>
+    <h3 data-bn="মিলনের ডিক্রি">Decree of Union</h3>
+    <p class="date" data-bn="০৪ ডিসেম্বর ২০২৬">04 December 2026</p>
+    <p data-bn="পিএসসি কনভেনশন সেন্টার, ঢাকা">PSC Convention Center, Dhaka</p>
+    <a class="btn" id="mapW" target="_blank" rel="noopener" data-bn="দিকনির্দেশনা">Get Directions</a><br>
+    <a class="link" id="calW" target="_blank" rel="noopener" data-bn="ক্যালেন্ডারে যোগ করুন">Add to Calendar</a>
+    <svg class="sealmini" aria-hidden="true"><use href="#seal"/></svg><span class="rib" aria-hidden="true"></span>
+  </article>
+
+  <article class="pass ticket">
+    <p class="mono acc-t" data-bn="প্রীতিভোজ">Reception</p>
+    <h3 data-bn="প্রবেশাধিকার মঞ্জুর: পূর্ণ ছাড়পত্র">Access Granted: Full Clearance</h3>
+    <p class="date" data-bn="০৫ ডিসেম্বর ২০২৬">05 December 2026</p>
+    <p data-bn="বনলতা পার্টি সেন্টার, পাবনা">Banolota Party Center, Pabna</p>
+    <div class="perf"></div>
+    <a class="btn" id="mapR" target="_blank" rel="noopener" data-bn="দিকনির্দেশনা">Get Directions</a><br>
+    <a class="link" id="calR" target="_blank" rel="noopener" data-bn="ক্যালেন্ডারে যোগ করুন">Add to Calendar</a>
+    <div class="bar" role="img" aria-label="Decorative barcode"></div>
+  </article>
+</section>
+
+<!-- ============ 6. RSVP ============ -->
+<section class="panel" aria-labelledby="h-rsvp">
+  <h2 id="h-rsvp" class="foil" style="font-size:clamp(2rem,9vw,2.8rem)" data-bn="আপনার উত্তর জানান">Your Reply</h2>
+  <p class="cut mono">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" role="img" aria-label="Scissors"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg>
+    <span data-bn="এখানে কেটে উত্তর পাঠান">Tear here &amp; return</span>
+  </p>
+  <div class="slipform">
+    <div class="stampbig" id="stamp" aria-hidden="true"><div>APPROVED<small>অনুমোদিত</small></div></div>
+    <form id="rsvp" novalidate>
+      <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <label for="f-name" data-bn="পূর্ণ নাম *">Full name *</label>
+      <input type="text" id="f-name" name="name" autocomplete="name" required aria-describedby="e-name">
+      <p class="err" id="e-name" role="alert"></p>
+      <fieldset aria-describedby="e-att">
+        <legend data-bn="আপনি কি আসছেন? *">Will you attend? *</legend>
+        <label class="radio"><input type="radio" name="attending" value="Yes"><span data-bn="হ্যাঁ, আমি থাকব">Yes, I'll be there</span></label>
+        <label class="radio"><input type="radio" name="attending" value="No"><span data-bn="দুঃখিত, আসতে পারছি না">Sorry, I can't make it</span></label>
+        <p class="err" id="e-att" role="alert"></p>
+      </fieldset>
+      <label for="f-ev" data-bn="কোন অনুষ্ঠানে?">Which event(s)?</label>
+      <select id="f-ev" name="events">
+        <option value="Both" data-bn="দুটিতেই">Both</option>
+        <option value="Wedding" data-bn="বিবাহ (০৪ ডিসেম্বর)">Wedding (04 Dec)</option>
+        <option value="Reception" data-bn="প্রীতিভোজ (০৫ ডিসেম্বর)">Reception (05 Dec)</option>
+      </select>
+      <label for="f-g" data-bn="অতিথির সংখ্যা (আপনিসহ)">Number of guests (including you)</label>
+      <input type="number" id="f-g" name="guests" min="1" max="10" value="1" inputmode="numeric">
+      <label for="f-msg" data-bn="শুভেচ্ছা বা মতামত">Message, wishes, or feedback</label>
+      <textarea id="f-msg" name="message"></textarea>
+      <p style="text-align:center;margin-top:1.4rem"><button class="btn" id="send" type="submit" data-bn="উত্তর পাঠান">Send reply</button></p>
+      <p id="fmsg" role="status" aria-live="polite"></p>
+    </form>
+    <div class="thanks" id="thanks" tabindex="-1"><h3 class="foil" data-bn="ধন্যবাদ!">Thank you!</h3><p data-bn="আপনার উত্তর পেয়েছি। দেখা হচ্ছে!">Your reply is on file. See you there!</p></div>
+  </div>
+</section>
+
+<!-- ============ 7. CONTACT ============ -->
+<section class="panel" aria-labelledby="h-ct">
+  <div class="callcard">
+    <h2 id="h-ct" style="font-size:1.7rem" data-bn="প্রশ্ন আছে? ফোন করুন">Questions? Call us</h2>
+    <p><a class="btn" id="tel" href="#" data-bn="ফোন করুন">Call</a><a class="btn" id="wa" href="#" target="_blank" rel="noopener">WhatsApp</a></p>
+  </div>
+</section>
+
+<!-- ============ 8. FOOTER ============ -->
+<section class="panel" aria-label="Closing">
+  <p class="fin foil" data-bn="মামলা নিষ্পত্তি। ভালোবাসা: চিরস্থায়ী।">Case closed. Love: permanent.</p>
+  <p class="mono" style="margin-top:1rem;color:var(--mute)" data-bn="ভালোবাসায় সিলমোহরকৃত। চিরকালের জন্য এনক্রিপ্টেড।">Sealed with love. Encrypted forever.</p>
+</section>
+</main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<button class="fab" id="langBtn" type="button" aria-label="Switch language to Bangla">বাং</button>
+<button class="fab" id="themeBtn" type="button" aria-label="Theme: Auto. Tap to change"></button>
+
+<script>
+(function(){
+'use strict';
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const root=document.documentElement;
+let lang='en'; try{lang=localStorage.getItem('inv-lang')||'en'}catch(e){}
+
+/* ----- toast ----- */
+let tt0; function toast(t){const el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(tt0);tt0=setTimeout(()=>el.classList.remove('show'),2600)}
+
+/* ----- corner flourishes ----- */
+$$('.panel').forEach(p=>p.insertAdjacentHTML('afterbegin',['tl','tr','bl','br'].map(c=>`<svg class="cn ${c}" viewBox="0 0 60 60" aria-hidden="true"><use href="#c"/></svg>`).join('')));
+
+/* ----- theme toggle: Auto -> Light -> Dark ----- */
+const ICON={
+ auto:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 000 16z" fill="currentColor"/></svg>',
+ light:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+ dark:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 119.5 4a7 7 0 0010.5 10.5z"/></svg>'};
+function paintTheme(){const p=root.dataset.pref;$('#themeBtn').innerHTML=ICON[p];$('#themeBtn').setAttribute('aria-label','Theme: '+p+'. Tap to change')}
+$('#themeBtn').onclick=()=>{
+  const n={auto:'light',light:'dark',dark:'auto'}[root.dataset.pref];
+  root.classList.add('tx');applyTheme(n);paintTheme();setTimeout(()=>root.classList.remove('tx'),600);
+  try{localStorage.setItem('inv-theme',n)}catch(e){}
+};
+mq.addEventListener('change',paintTheme);paintTheme();
+
+/* ----- language (English / Bangla) ----- */
+let typer;
+function typeTag(){
+  const el=$('#tag'),s=lang==='bn'?el.dataset.bn:el.dataset.en;clearInterval(typer);
+  if(RM){el.textContent=s;return}
+  el.textContent='';let i=0;typer=setInterval(()=>{el.textContent=s.slice(0,++i);if(i>=s.length)clearInterval(typer)},48);
+}
+function setLang(l,noType){
+  lang=l;root.lang=l;
+  $$('[data-bn]').forEach(e=>{if(e.dataset.en===undefined)e.dataset.en=e.innerHTML;e.innerHTML=l==='bn'?e.dataset.bn:e.dataset.en});
+  const b=$('#langBtn');b.textContent=l==='bn'?'EN':'বাং';b.setAttribute('aria-label',l==='bn'?'Switch language to English':'Switch language to Bangla');
+  $('#skip').textContent=l==='bn'?'এড়িয়ে যান':'Skip';
+  $('.tap').textContent=l==='bn'?'সিল ভাঙতে ট্যাপ করুন':'Tap to break the seal';
+  $('.to').textContent=l==='bn'?'আমাদের প্রিয় অতিথির প্রতি':'To our dear guest';
+  if(!noType)typeTag();
+  try{localStorage.setItem('inv-lang',l)}catch(e){}
+}
+$('#langBtn').onclick=()=>setLang(lang==='bn'?'en':'bn');
+setLang(lang,true);
+$('#tag').textContent='';
+
+/* ----- links & calendar ----- */
+$('#mapW').href=MAP_LINK_WEDDING;$('#mapR').href=MAP_LINK_RECEPTION;
+const cal=(t,d1,d2,loc)=>'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(t)+'&dates='+d1+'/'+d2+'&location='+encodeURIComponent(loc);
+$('#calW').href=cal('Wedding of Neha & Mehedi','20261204','20261205','PSC Convention Center, Dhaka');
+$('#calR').href=cal('Reception of Neha & Mehedi','20261205','20261206','Banolota Party Center, Pabna');
+const tel=$('#tel'),wa=$('#wa');
+if(PHONE_NUMBER)tel.href='tel:'+PHONE_NUMBER;else{tel.onclick=e=>{e.preventDefault();toast('Number coming soon')};console.warn('PHONE_NUMBER is not set.')}
+if(WHATSAPP_NUMBER)wa.href='https://wa.me/'+WHATSAPP_NUMBER;else{wa.onclick=e=>{e.preventDefault();toast('Number coming soon')};console.warn('WHATSAPP_NUMBER is not set.')}
+if(COUPLE_PHOTO_URL){const i=new Image();i.src=COUPLE_PHOTO_URL;i.className='photo';i.alt='Neha and Mehedi';$('#cover .lead').after(i)}
+
+/* ----- easter egg ----- */
+$('#padlock').onclick=()=>toast(lang==='bn'?'এনক্রিপশন স্ট্যাটাস: অভেদ্য':'Encryption status: Unbreakable');
+
+/* ----- countdown (Dhaka time, UTC+6) ----- */
+const target=new Date('2026-12-04T00:00:00+06:00');
+function tick(){
+  let t=Math.max(0,target-Date.now())/1000|0;
+  const v={d:t/86400|0,h:t%86400/3600|0,m:t%3600/60|0,s:t%60};
+  for(const k in v)$('#'+k).textContent=String(v[k]).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+
+/* ----- foil shimmer: pointer (desktop) / tilt (mobile) ----- */
+addEventListener('pointermove',e=>{if(e.pointerType==='mouse')root.style.setProperty('--fx',(e.clientX/innerWidth*100).toFixed(1))},{passive:true});
+function tilt(e){if(e.gamma!=null)root.style.setProperty('--fx',Math.min(100,Math.max(0,(e.gamma+30)/60*100)).toFixed(1))}
+function enableTilt(){
+  try{
+    if(window.DeviceOrientationEvent&&typeof DeviceOrientationEvent.requestPermission==='function'){
+      DeviceOrientationEvent.requestPermission().then(r=>{if(r==='granted')addEventListener('deviceorientation',tilt)}).catch(()=>{});
+    }else if(window.DeviceOrientationEvent)addEventListener('deviceorientation',tilt);
+  }catch(e){}
+}
+
+/* ----- gold dust (canvas, paused when hidden) ----- */
+(function(){
+  const cv=$('#dust'),cx=cv.getContext('2d');if(!cx||RM)return;
+  let w,h,ps=[],raf;
+  function size(){const r=cv.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);w=r.width;h=r.height;cv.width=w*dpr;cv.height=h*dpr;cx.setTransform(dpr,0,0,dpr,0,0)}
+  function mk(){return{x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+.4,vy:-(Math.random()*.25+.05),vx:(Math.random()-.5)*.15,a:Math.random()*6}}
+  function frame(){
+    cx.clearRect(0,0,w,h);
+    const g=getComputedStyle(root).getPropertyValue('--gold2').trim()||'#EFD58A';cx.fillStyle=g;
+    ps.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.a+=.03;if(p.y<-4){p.y=h+4;p.x=Math.random()*w}
+      cx.globalAlpha=.25+.45*Math.abs(Math.sin(p.a));cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.3);cx.fill()});
+    raf=requestAnimationFrame(frame);
+  }
+  size();ps=Array.from({length:30},mk);addEventListener('resize',size);
+  document.addEventListener('visibilitychange',()=>{cancelAnimationFrame(raf);if(!document.hidden)frame()});
+  frame();
+})();
+
+/* ----- scroll reveal ----- */
+let io;
+function reveal(){
+  if(!('IntersectionObserver' in window)||RM){$$('.panel').forEach(p=>p.classList.add('in'));return}
+  io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  $$('.panel').forEach(p=>io.observe(p));
+}
+
+/* ----- envelope ----- */
+const env=$('#env');
+function finish(){env.remove();document.body.classList.remove('lock');scrollTo(0,0);reveal();typeTag()}
+function openEnv(instant){
+  if(env.classList.contains('open'))return;
+  if(instant){finish();return}
+  env.classList.add('open');enableTilt();
+  setTimeout(()=>env.classList.add('leave'),1200);
+  setTimeout(finish,1750);
+}
+$('#seal').onclick=()=>openEnv(false);
+$('#skip').onclick=()=>openEnv(true);
+if(RM)openEnv(true);
+
+/* ----- RSVP ----- */
+const form=$('#rsvp');
+const T=(en,bn)=>lang==='bn'?bn:en;
+function err(id,m){$('#'+id).textContent=m||''}
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  err('e-name');err('e-att');$('#fmsg').textContent='';
+  const fd=new FormData(form);let ok=true;
+  if(!(fd.get('name')||'').trim()){err('e-name',T('Please tell us your name.','অনুগ্রহ করে আপনার নাম লিখুন।'));ok=false}
+  if(!fd.get('attending')){err('e-att',T('Please choose one option.','অনুগ্রহ করে একটি বেছে নিন।'));ok=false}
+  if(!ok){(form.querySelector('.err:not(:empty)')||form).previousElementSibling?.focus?.();return}
+  if(fd.get('website')){showDone();return}           // honeypot: bots get a fake success
+  if(!FORM_ENDPOINT){
+    console.warn('FORM_ENDPOINT is not set. Add a Formspree or Google Apps Script URL at the top of the file.');
+    $('#fmsg').textContent=T('RSVP is not connected yet. Please call or WhatsApp us to confirm.','RSVP এখনো সংযুক্ত হয়নি। নিশ্চিত করতে ফোন বা WhatsApp করুন।');return;
+  }
+  const btn=$('#send');btn.disabled=true;btn.textContent=T('Sending…','পাঠানো হচ্ছে…');
+  const data={name:fd.get('name').trim(),attending:fd.get('attending'),events:fd.get('events'),guests:fd.get('guests'),message:fd.get('message')};
+  try{
+    if(FORM_ENDPOINT.includes('script.google.com')){
+      // Apps Script: no-cors, opaque response is expected
+      await fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams(data)});
+    }else{
+      const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)});
+      if(!r.ok)throw new Error('HTTP '+r.status);
+    }
+    showDone();
+  }catch(x){
+    console.error(x);btn.disabled=false;btn.textContent=T('Send reply','উত্তর পাঠান');
+    $('#fmsg').textContent=T('Could not send. Check your connection and try again.','পাঠানো যায়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন।');
+  }
+});
+function showDone(){
+  const s=$('#stamp');s.classList.add('show');
+  setTimeout(()=>{s.classList.remove('show');form.style.display='none';const t=$('#thanks');t.classList.add('show');t.focus()},RM?200:1700);
+}
+})();
+</script>
+</body>
+</html>
