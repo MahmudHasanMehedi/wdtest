@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neha &amp; Mehedi – Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F2340; --navy2:#1B3358; --gold:#B8975A; --gold-soft:#D9C397;
+  --ivory:#FAF6EC; --paper:#FFFDF8; --teal:#4F7F7C; --ink:#22304A;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Jost',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--ink);font:300 1.02rem/1.7 var(--sans);min-height:100svh}
+body.locked{overflow:hidden}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+[hidden]{display:none!important}
+.backdrop{position:fixed;inset:0;z-index:-1;background:radial-gradient(110% 80% at 50% 0%,var(--navy2),var(--navy) 70%)}
+.backdrop svg{width:100%;height:100%;opacity:.07}
+
+/* ---------- Envelope gate ---------- */
+.gate{position:fixed;inset:0;z-index:20;display:grid;place-content:center;justify-items:center;gap:1.8rem;
+  background:radial-gradient(110% 80% at 50% 0%,var(--navy2),var(--navy) 70%);transition:opacity .9s ease,transform .9s ease}
+.gate.gone{opacity:0;transform:translateY(24px);pointer-events:none}
+.env{position:relative;width:min(86vw,26rem);aspect-ratio:3/2;perspective:1200px;filter:drop-shadow(0 24px 30px rgba(0,0,0,.45))}
+.env>*{position:absolute}
+.env-back{inset:0;background:#142B4D;border-radius:3px}
+.pocket{inset:0;background:linear-gradient(180deg,#1d3a66,#16305a);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);z-index:2;border-radius:3px}
+.flap{top:0;left:0;right:0;height:56%;background:linear-gradient(180deg,#244476,#1a3560);clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;transition:transform .9s cubic-bezier(.5,0,.2,1),z-index 0s .45s;z-index:3}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.seal{left:50%;top:56%;width:3.6rem;height:3.6rem;margin:-1.8rem 0 0 -1.8rem;border-radius:50%;z-index:4;display:grid;place-items:center;
+  background:radial-gradient(circle at 35% 30%,#e6d3a6,var(--gold) 60%,#8e7140);box-shadow:0 3px 8px rgba(0,0,0,.4);transition:opacity .4s}
+.seal svg{width:1.7rem}
+.env.open .seal{opacity:0}
+.env-names{left:0;right:0;bottom:11%;text-align:center;z-index:3;font:italic 500 clamp(1.3rem,5.5vw,1.8rem)/1.2 var(--serif);color:var(--gold-soft)}
+.open-btn{font:400 .98rem var(--sans);letter-spacing:.08em;color:var(--ivory);background:transparent;border:1px solid var(--gold-soft);padding:.8rem 2rem;border-radius:2px;cursor:pointer;transition:background .3s,color .3s}
+.open-btn:hover{background:var(--gold-soft);color:var(--navy)}
+.gate p{color:#b9c2d3;font-size:.95rem}
+
+/* ---------- The card ---------- */
+.card{position:relative;width:min(100% - 1.5rem,34rem);margin:1.2rem auto 3rem;background:var(--paper);color:var(--ink);text-align:center;
+  padding:3.2rem 1.7rem 2.6rem;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);opacity:0;transform:translateY(40px)}
+.card.show{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.card::before{content:"";position:absolute;inset:8px;border:1px solid var(--gold);pointer-events:none}
+.card::after{content:"";position:absolute;inset:13px;border:1px solid rgba(184,151,90,.4);pointer-events:none}
+.corner{position:absolute;width:3.4rem;height:3.4rem;color:var(--gold);z-index:1}
+.corner.tl{top:8px;left:8px}.corner.tr{top:8px;right:8px;transform:scaleX(-1)}
+.corner.bl{bottom:8px;left:8px;transform:scaleY(-1)}.corner.br{bottom:8px;right:8px;transform:scale(-1)}
+.binary{position:absolute;left:14px;right:14px;top:14px;height:9rem;opacity:.1;overflow:hidden;pointer-events:none;
+  -webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent)}
+.petals{position:absolute;left:14px;right:14px;bottom:14px;height:7rem;opacity:.5;pointer-events:none}
+.inner{position:relative;z-index:2;padding:0 .4rem}
+
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--navy);line-height:1.15}
+.emblem{width:5.2rem;margin:0 auto 1.1rem;color:var(--gold)}
+.intro{font:italic 400 1.2rem/1.5 var(--serif);color:var(--teal)}
+.names{margin:1rem 0 .3rem;font:500 clamp(2.3rem,10vw,3.3rem)/1.05 var(--serif);color:var(--navy)}
+.names i{display:block;font-size:.45em;font-weight:400;color:var(--gold);margin:.2em 0}
+.tagline{font:italic 400 1.25rem/1.4 var(--serif);color:var(--gold);margin-top:.9rem}
+.line{margin:.9rem auto 0;max-width:23rem;color:#51607a}
+
+.div{display:flex;align-items:center;gap:.8rem;margin:2.2rem auto;max-width:18rem;color:var(--gold)}
+.div::before,.div::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-soft))}
+.div::after{transform:scaleX(-1)}
+.div svg{width:1.7rem;flex:none}
+
+.cameo{width:11rem;aspect-ratio:4/5;margin:1.6rem auto 0;border:1px solid var(--gold);border-radius:50%;padding:6px;background:var(--paper)}
+.cameo div{height:100%;border-radius:50%;display:grid;place-items:center;padding:1.4rem;background:linear-gradient(160deg,#e9eef2,#d9e3e5);color:var(--teal);font-size:.85rem;line-height:1.4}
+.cameo svg{width:2rem;display:block;margin:0 auto .3rem}
+
+.event .ico{width:2.4rem;margin:0 auto .5rem;color:var(--gold)}
+.event h2{font-size:1.9rem}
+.event .day{color:var(--teal);margin-top:.3rem}
+.event .date{font:500 1.6rem/1.2 var(--serif);color:var(--navy)}
+.event .venue{margin-top:.8rem;font-weight:400;color:var(--navy)}
+.event .city{color:#5b6980;margin-bottom:1.2rem}
+.btn{display:inline-block;font:400 .92rem var(--sans);letter-spacing:.06em;text-decoration:none;cursor:pointer;color:var(--navy);
+  background:transparent;border:1px solid var(--gold);padding:.65rem 1.5rem;border-radius:2px;transition:background .3s,color .3s}
+.btn:hover{background:var(--navy);border-color:var(--navy);color:var(--ivory)}
+.btn.solid{background:var(--navy);border-color:var(--navy);color:var(--ivory);width:100%;padding:.9rem}
+.btn.solid:hover{background:var(--teal);border-color:var(--teal)}
+
+/* reply slip */
+.cut{margin:2.4rem -.4rem 1.6rem;border-top:1px dashed var(--gold);position:relative}
+.cut span{position:absolute;top:-.85rem;left:1rem;background:var(--paper);padding:0 .4rem;color:var(--gold)}
+.slip h2{font-size:1.9rem}
+.slip .line{margin-bottom:1.5rem}
+form,.thanks{text-align:left}
+label,legend{display:block;font-weight:400;color:var(--navy);margin-bottom:.2rem;font-size:.95rem}
+.field{margin-bottom:1.15rem}
+input[type=text],input[type=number],textarea{width:100%;font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid #cfc7b0;border-radius:0;padding:.45rem .1rem}
+textarea{border:1px solid #cfc7b0;padding:.6rem;resize:vertical;background:var(--ivory)}
+input:focus,textarea:focus{border-color:var(--teal);outline:none;box-shadow:0 1px 0 var(--teal)}
+fieldset{border:0;padding:0;margin:0 0 1.15rem;min-width:0}
+.opts{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.3rem}
+.opts label{margin:0;cursor:pointer}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts span{display:inline-block;padding:.4rem 1.1rem;border:1px solid #cfc7b0;border-radius:2px;transition:all .25s;background:var(--ivory)}
+.opts input:checked+span{background:var(--navy);border-color:var(--navy);color:var(--ivory)}
+.opts input:focus-visible+span{outline:2px solid var(--teal);outline-offset:2px}
+#err{color:#a33;margin-bottom:.9rem;font-size:.95rem}
+.thanks{text-align:center;padding:1rem 0;opacity:0;animation:rise .9s ease forwards}
+.thanks svg{width:3.2rem;color:var(--gold);margin-bottom:.6rem}
+
+.contacts{display:grid;gap:1rem;margin-top:1.4rem}
+.contacts h3{font-size:1.25rem}
+.contacts a{display:block;color:var(--teal);text-decoration:none}
+.contacts a:hover{text-decoration:underline}
+.sign{margin-top:2.4rem;font:italic 400 1.5rem/1.3 var(--serif);color:var(--gold)}
+.sign small{display:block;font:300 .9rem var(--sans);color:#7a869a;margin-top:.3rem}
+
+@media(min-width:600px){.card{padding:4rem 3rem 3rem;margin-top:2.2rem}}
+@media(prefers-reduced-motion:reduce){
+  .gate,.flap,.seal{transition-duration:.01s}
+  .card.show,.thanks{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body class="locked">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="corner" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+      <path d="M2 58V16C2 8 8 2 16 2h42"/><path d="M10 40V20c0-6 4-10 10-10h20"/><circle cx="14" cy="14" r="3" fill="currentColor" stroke="none"/><path d="M22 22c6 0 8 4 14 4M22 22c0 6 4 8 4 14"/>
+    </symbol>
+    <symbol id="rose" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+      <circle cx="20" cy="18" r="3"/><path d="M20 18c3-1 6 0 6 4s-4 6-8 5-7-5-5-9 6-6 10-5 8 4 7 9"/><path d="M20 28v9M20 33c-4-1-6-3-7-6M20 31c4-1 6-3 7-6"/>
+    </symbol>
+    <symbol id="shield" viewBox="0 0 120 140" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+      <path d="M60 6 L108 24 V68 C108 98 86 120 60 134 C34 120 12 98 12 68 V24 Z"/>
+      <path d="M60 28 V90 M36 40 H84 M44 90 H76 M36 40 L26 64 M36 40 L46 64 M84 40 L74 64 M84 40 L94 64"/>
+      <path d="M24 64 Q36 76 48 64 Z M72 64 Q84 76 96 64 Z" fill="currentColor" fill-opacity=".22"/>
+      <circle cx="60" cy="28" r="4.5" fill="currentColor" stroke="none"/>
+      <circle cx="60" cy="108" r="9"/><path d="M60 108 m-5 0 a5 5 0 0 1 10 0"/><path d="M60 100 q4 4 0 8 q-4 -4 0 -8"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="backdrop" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg"><defs><pattern id="bin" width="180" height="90" patternUnits="userSpaceOnUse">
+    <text x="0" y="20" fill="#D9C397" font-family="monospace" font-size="14">0110 1001 0011 1010</text>
+    <text x="40" y="55" fill="#D9C397" font-family="monospace" font-size="14">1100 0101 1001 0110</text>
+    <text x="-20" y="85" fill="#D9C397" font-family="monospace" font-size="14">0011 1110 0101 1000</text></pattern></defs>
+    <rect width="100%" height="100%" fill="url(#bin)"/></svg>
+</div>
+
+<!-- Envelope -->
+<div class="gate" id="gate">
+  <div class="env" id="env">
+    <div class="env-back"></div>
+    <div class="flap"></div>
+    <div class="pocket"></div>
+    <div class="seal"><svg viewBox="0 0 120 140" style="color:#6d5527"><use href="#shield"/></svg></div>
+    <div class="env-names">Neha &amp; Mehedi</div>
+  </div>
+  <button class="open-btn" id="openBtn" type="button">Open the invitation</button>
+  <p>You are warmly invited</p>
+</div>
+
+<!-- Invitation card -->
+<main class="card" id="card">
+  <svg class="corner tl" aria-hidden="true"><use href="#corner"/></svg>
+  <svg class="corner tr" aria-hidden="true"><use href="#corner"/></svg>
+  <svg class="corner bl" aria-hidden="true"><use href="#corner"/></svg>
+  <svg class="corner br" aria-hidden="true"><use href="#corner"/></svg>
+  <svg class="binary" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#bin)"/></svg>
+  <svg class="petals" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#E8D9B8"><ellipse cx="40" cy="92" rx="38" ry="12" transform="rotate(-20 40 92)"/><ellipse cx="80" cy="78" rx="30" ry="10" transform="rotate(25 80 78)"/><ellipse cx="360" cy="92" rx="38" ry="12" transform="rotate(20 360 92)"/><ellipse cx="320" cy="78" rx="30" ry="10" transform="rotate(-25 320 78)"/></g>
+  </svg>
+
+  <div class="inner">
+    <svg class="emblem" viewBox="0 0 120 140" role="img" aria-label="Shield with scales of justice, a lock and a rose"><use href="#shield"/></svg>
+    <p class="intro">Together with their families</p>
+    <h1 class="names">Showrin Tajrin Neha <i>&amp;</i> Mahmud Hasan Mehedi</h1>
+    <p class="tagline">A Union of Love, Law &amp; Security</p>
+    <p class="line">request the pleasure of your company as they begin their life together.</p>
+
+    <div class="cameo"><div><span><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="18" r="7"/><path d="M9 42c1-9 7-14 15-14s14 5 15 14"/></svg>Couple photo</span></div></div>
+
+    <div class="div"><svg><use href="#rose"/></svg></div>
+
+    <section class="event" aria-labelledby="w">
+      <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="18" cy="28" r="10"/><circle cx="30" cy="28" r="10"/><path d="M24 10l-3-4h6z"/></svg>
+      <h2 id="w">The Wedding</h2>
+      <p class="day">Friday</p>
+      <p class="date">04 December 2026</p>
+      <p class="venue">PSC Convention Center</p>
+      <p class="city">Dhaka</p>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=PSC+Convention+Center+Dhaka">Get Directions</a>
+    </section>
+
+    <div class="div"><svg><use href="#rose"/></svg></div>
+
+    <section class="event" aria-labelledby="r">
+      <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 6h16l-2 14a6 6 0 01-12 0z"/><path d="M24 26v13M16 42h16M20 12h8"/></svg>
+      <h2 id="r">The Reception</h2>
+      <p class="day">Saturday</p>
+      <p class="date">05 December 2026</p>
+      <p class="venue">Banolota Party Center</p>
+      <p class="city">Pabna</p>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Banolota+Party+Center+Pabna">Get Directions</a>
+    </section>
+
+    <div class="cut" aria-hidden="true"><span>✂</span></div>
+
+    <section class="slip" id="rsvp" aria-labelledby="rs">
+      <h2 id="rs">Will You Join Us?</h2>
+      <p class="line">Kindly let us know, and leave a note if you wish.</p>
+
+      <form id="rsvpForm" novalidate>
+        <div class="field"><label for="name">Full name</label><input type="text" id="name" name="name" autocomplete="name"></div>
+        <div class="field"><label for="guests">Number of guests, including you</label><input type="number" id="guests" name="guests" min="1" max="10" value="1"></div>
+        <fieldset><legend>Attending the wedding (04 Dec)</legend>
+          <div class="opts">
+            <label><input type="radio" name="wedding" value="Yes"><span>Yes</span></label>
+            <label><input type="radio" name="wedding" value="No"><span>No</span></label>
+            <label><input type="radio" name="wedding" value="Maybe"><span>Maybe</span></label>
+          </div></fieldset>
+        <fieldset><legend>Attending the reception (05 Dec)</legend>
+          <div class="opts">
+            <label><input type="radio" name="reception" value="Yes"><span>Yes</span></label>
+            <label><input type="radio" name="reception" value="No"><span>No</span></label>
+            <label><input type="radio" name="reception" value="Maybe"><span>Maybe</span></label>
+          </div></fieldset>
+        <div class="field"><label for="message">Message, feedback or special requests</label><textarea id="message" name="message" rows="3"></textarea></div>
+        <p id="err" role="alert" hidden></p>
+        <button class="btn solid" type="submit" id="send">Send my response</button>
+      </form>
+
+      <div class="thanks" id="thanks" hidden tabindex="-1">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="24" cy="24" r="19"/><path d="M15 25l6 6 12-14"/></svg>
+        <h3 style="font-size:1.8rem">Thank you, <span id="who"></span></h3>
+        <p style="margin-top:.5rem">Your response has reached us. We are grateful to share this day with you and look forward to celebrating together.</p>
+      </div>
+    </section>
+
+    <div class="div"><svg><use href="#rose"/></svg></div>
+
+    <section aria-labelledby="c">
+      <h2 id="c" style="font-size:1.6rem">For any questions, please contact us</h2>
+      <div class="contacts">
+        <div><h3>Bride’s family</h3><a href="tel:+8801XXXXXXXXX">+880 1XXX-XXXXXX</a></div>
+        <div><h3>Groom’s family</h3><a href="tel:+8801XXXXXXXXX">+880 1XXX-XXXXXX</a></div>
+        <div><h3>WhatsApp &amp; email</h3><a href="https://wa.me/8801XXXXXXXXX">WhatsApp +880 1XXX-XXXXXX</a><a href="mailto:your@email.com">your@email.com</a></div>
+      </div>
+    </section>
+
+    <p class="sign">Showrin &amp; Mehedi<small>With love, 2026</small></p>
+  </div>
+</main>
+
+<script>
+// Paste your Formspree URL or Google Apps Script web-app URL here.
+// While empty, the form shows the thank-you message but sends nothing.
+const FORM_ENDPOINT = "";
+
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const gate = document.getElementById("gate"), env = document.getElementById("env"), card = document.getElementById("card");
+document.getElementById("openBtn").addEventListener("click", () => {
+  env.classList.add("open");
+  setTimeout(() => {
+    gate.classList.add("gone");
+    card.classList.add("show");
+    document.body.classList.remove("locked");
+    window.scrollTo(0, 0);
+    setTimeout(() => gate.hidden = true, 1000);
+  }, reduce ? 50 : 1100);
+});
+document.getElementById("env").addEventListener("click", () => document.getElementById("openBtn").click());
+
+const form = document.getElementById("rsvpForm"), err = document.getElementById("err"), send = document.getElementById("send");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  err.hidden = true;
+  const data = new FormData(form);
+  const name = (data.get("name") || "").toString().trim();
+  if (!name) return fail("Please enter your full name.", "name");
+  if (!data.get("wedding")) return fail("Please choose an answer for the wedding on 04 Dec.");
+  if (!data.get("reception")) return fail("Please choose an answer for the reception on 05 Dec.");
+  send.disabled = true; send.textContent = "Sending…";
+  try {
+    if (FORM_ENDPOINT) {
+      const res = await fetch(FORM_ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } });
+      if (!res.ok) throw new Error("bad response");
+    }
+    document.getElementById("who").textContent = name.split(/\s+/)[0];
+    form.hidden = true;
+    const t = document.getElementById("thanks");
+    t.hidden = false; t.focus();
+  } catch (_) {
+    send.disabled = false; send.textContent = "Send my response";
+    fail("We couldn’t send your response. Please check your connection and try again.");
+  }
+});
+function fail(msg, id) { err.textContent = msg; err.hidden = false; if (id) document.getElementById(id).focus(); }
+</script>
+</body>
+</html>
